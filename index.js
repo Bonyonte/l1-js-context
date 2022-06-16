@@ -21,14 +21,18 @@ const student = {
     }
 }
 // call speak function in object
-// student.speak("Hello World")
+//student.speak("Hello World")
 
 
 //TODO: Context in classes
+// syntax for classes: class <name> {vars, functions,}
+//syntax for objects: const xyz = new Name(arg..)
 class Person {
     constructor(name, age){
         this.name = name
         this.age = age
+        this.email = "mail@gmail.com"
+        this.idNumber = 36017381
         print(this)
     }
 
@@ -38,25 +42,28 @@ class Person {
 
 }
 // create person instance
-// const person = new Person("John Doe", 50)
+ const person = new Person("John Doe", 50)
 // TODO: Access context inside class from function
-// person.speak("Howdie")
+ person.speak("Howdie")
 
 // TODO: ACCESSING OBJECT PARAMETERS IN FUNCTIONS USING this
 function displayMedia(mediaType){
     print(`Details of: ${mediaType}`)
     print(this)
+
 }
+
+//displayMedia("Music")
 // using call 
-// displayMedia.call( {game:"Pinball", year:1992}, "game")
+displayMedia.call( {game:"Pinball", year:1992}, "game")
 
 
 // using apply
-// displayMedia.apply( {video:"How to fly", year:2022}, ["video"] )
+ displayMedia.apply( {video:"How to fly", year:2022}, ["video"] )
 
 
 // permanently lock with bind
-// const media = displayMedia.bind( {audio:"Mbwe Mbwe", year:2022})
-// media("music")
+ const media = displayMedia.bind( {audio:"Mbwe Mbwe", year:2022})
+ media("music")
 
 
